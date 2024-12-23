@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Comic Neue";
+  src: url("/src/fonts/ComicNeue-Regular.otf");
+}
+
+.m-header {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #E0E0E0;
+  display: flex;
+  flex-direction: row;
+}
+
+.m-header-box {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 32px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.m-SNS-button {
+  position: absolute;
+  font-family: "Comic Neue";
+  font-size: 20px;
+  font-weight: 400;
+  justify-self: start;
+  left: 20px;
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  /* 컨테이너 가로 중앙 */
+  top: 50%;
+  /* 컨테이너 세로 중앙 */
+  transform: translate(-50%, -50%);
+}
+
+.mobile-siot-logo {
+  width: 77.9px;
+  height: auto;
+}
+
+.share-button {
+  position: absolute;
+  /* 절대 위치 */
+  right: 15px;
+  /* 컨테이너 오른쪽에서 20px 떨어짐 */
+  top: 50%;
+  /* 세로 중앙 정렬 */
+  transform: translateY(-50%);
+}
+
+.share-button {
+  width: 30px;
+}
+
+.m-white-section {
+  display : flex;
+  width: 100%;
+  height: 550px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.m-black-section {
+  display : flex;
+  width: 100%;
+  height: 630px;
+  background-color: #000;
+  justify-content: center;
+}
+
+
+.footer {
+  position: fixed;
+  /* 화면에 고정 */
+  bottom: 0;
+  /* 화면 하단에 위치 */
+  left: 0;
+  width: 100%;
+  height: 80px;
+  /* footer 높이 */
+  background-color: #fff;
+  /* 배경색 */
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  /* 플렉스 박스 사용 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
+  z-index: 1000;
+  /* 다른 요소보다 위로 */
+}
+
+.footer input {
+  margin-left: 4.5%;
+  width: 75%;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #000;
+  font-size: 14px;
+  color: #000;
+  padding-left: 12px;
+
+
+}
+
+.m-okbutton {
+  display: flex;
+  margin-left : 2%;
+  width: 12%;
+  height: 38px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: #000;
+  font-size: 14px;
+  color : #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-white-content{
+  height : 90%;
+}
+
+.m-black-content{
+  margin-top: 4%;
+  height : 75%;
+}

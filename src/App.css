@@ -1,38 +1,28 @@
+@font-face {
+  font-family: "comicNeue-Regular";
+  src: url('fonts/ComicNeue-Regular.otf');
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height : 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.footer {
+  position: fixed; /* 화면 하단에 고정 */
+  bottom: 0; /* 하단에서의 위치 */
+  left: 0; /* 왼쪽부터 시작 */
+  width: 100%; /* 화면 전체 너비 */
+  background-color: #000; /* 배경색 검은색 */
+  color: #fff; /* 텍스트 흰색 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  padding: 10px 0; /* 위아래 여백 */
+  z-index: 1000; /* 다른 요소 위에 위치 */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
+  border-radius: 20px 20px 0px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
