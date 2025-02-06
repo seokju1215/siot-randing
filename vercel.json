@@ -1,0 +1,15 @@
+{
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/store-landingpage",
+        "permanent": true
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/store-landingpage/:path*",
+        "destination": "/:path*"
+      }
+    ]
+  }
