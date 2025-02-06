@@ -39,10 +39,11 @@
     /* 세로 가운데 정렬 */
     z-index: 1000;
     /* 다른 요소보다 위로 */
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .footer input {
-    margin-left: 4.5%;
     width: 75%;
     height: 38px;
     flex-shrink: 0;
