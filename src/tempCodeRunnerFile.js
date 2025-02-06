@@ -1,0 +1,1 @@
+'email-input ${props.submitted ? "submitted" : ""} ${props.error ? "error" : ""}'
