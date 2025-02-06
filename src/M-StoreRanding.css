@@ -39,8 +39,7 @@
     /* 세로 가운데 정렬 */
     z-index: 1000;
     /* 다른 요소보다 위로 */
-    padding-left: 3%;
-    padding-right: 3%;
+    justify-content: center;
 }
 
 .footer input {
