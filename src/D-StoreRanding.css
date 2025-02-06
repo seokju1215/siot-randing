@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "Comic Neue";
+    src: url("/src/fonts/ComicNeue-Regular.otf");
+}
+
+
+.d-section {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    
+}
+
+.d-content{
+    display: flex;
+    width : 600px;
+    height : auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+}
+
+.footer {
+    position: fixed;
+    /* 화면에 고정 */
+    bottom: 0;
+    /* 화면 하단에 위치 */
+    left: 0;
+    width: 100%;
+    height: 80px;
+    /* footer 높이 */
+    background-color: #fff;
+    /* 배경색 */
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    /* 플렉스 박스 사용 */
+    align-items: center;
+    /* 세로 가운데 정렬 */
+    z-index: 1000;
+    /* 다른 요소보다 위로 */
+}
+
+.footer input {
+    margin-left: 4.5%;
+    width: 75%;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    font-size: 14px;
+    color: #000;
+    padding-left: 12px;
+
+
+}
+
+.m-okbutton {
+    display: flex;
+    margin-left: 2%;
+    width: 12%;
+    height: 38px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: #000;
+    font-size: 14px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-white-content {
+    height: 90%;
+}
+
+.m-black-content {
+    margin-top: 4%;
+    height: 75%;
+}

@@ -1,9 +1,9 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getFunctions } from "firebase/functions"; // Cloud Functions 추가
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDIshlAfOpDqLCvbeADYBkXJwYEFuKmBxQ",
+  apiKey: "AIzaSyDIshlAfOpDqLCvbeADYBkXJwYEFuKmBxQ",
   authDomain: "siotranding.firebaseapp.com",
   projectId: "siotranding",
   storageBucket: "siotranding.firebasestorage.app",
@@ -14,5 +14,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const functions = getFunctions(app); // Cloud Functions 초기화
 
-export { db };
+export { db, functions };
