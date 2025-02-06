@@ -39,11 +39,15 @@ function App() {
       const result = await response.json();
 
       if (!response.ok) {
-        // 🔴 서버에서 받은 에러 메시지를 확인하고 사용자에게 알림 표시
-        if (result.error && result.error.includes("Invalid email format")) {
-          alert("타당하지 않은 이메일입니다. 올바른 이메일 형식을 입력해주세요.");
-        } else {
-          alert(`요청 실패: ${result.error || "알 수 없는 오류 발생"}`);
+        // 🔴 중복된 이메일 메시지 확인
+        if (result.error) {
+          if (result.error.includes("이미 저장된 이메일")) {
+            alert("이미 저장된 이메일입니다.");
+          } else if (result.error.includes("Invalid email format")) {
+            alert("타당하지 않은 이메일입니다. 올바른 이메일 형식을 입력해주세요.");
+          } else {
+            alert(`요청 실패: ${result.error}`);
+          }
         }
         return;
       }

@@ -4,9 +4,11 @@ const axios = require("axios");
 const cors = require("cors");
 
 admin.initializeApp();
+const db = admin.firestore();
 const corsHandler = cors({
   origin: true,
-  methods: ["POST", "OPTIONS"]});
+  methods: ["POST", "OPTIONS"],
+});
 
 // Firebase 프로젝트 ID 가져오기
 const projectId = process.env.GCLOUD_PROJECT;
@@ -61,7 +63,7 @@ async function getAccessToken() {
 }
 
 /**
- * 이메일 저장 Cloud Function - 무료 할당량 초과 시 요청 차단
+ * 이메일 저장 Cloud Function - 중복 검사 & 무료 할당량 초과 시 요청 차단
  */
 exports.addEmail = functions.https.onRequest(async (req, res) => {
   corsHandler(req, res, async () => {
@@ -74,6 +76,7 @@ exports.addEmail = functions.https.onRequest(async (req, res) => {
     }
 
     try {
+      // 무료 할당량 초과 확인
       const isFree = await isUnderFreeQuota();
       if (!isFree) {
         return res.status(403).json({error: "무료 할당량을 초과하여 요청이 차단되었습니다."});
@@ -87,7 +90,16 @@ exports.addEmail = functions.https.onRequest(async (req, res) => {
         return res.status(400).json({error: "Invalid email format"});
       }
 
-      await admin.firestore().collection("emails").add({
+      // 🔴 Firestore에서 중복 이메일 확인
+      const emailRef = db.collection("emails").doc(email);
+      const emailDoc = await emailRef.get();
+
+      if (emailDoc.exists) {
+        return res.status(400).json({error: "이미 저장된 이메일입니다."});
+      }
+
+      // 🔵 Firestore에 이메일 저장
+      await emailRef.set({
         email,
         timestamp: admin.firestore.FieldValue.serverTimestamp(),
       });
